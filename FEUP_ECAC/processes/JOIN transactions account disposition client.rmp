@@ -42,14 +42,16 @@
       <operator activated="true" class="retrieve" compatibility="9.0.003" expanded="true" height="68" name="Retrieve client_final" width="90" x="380" y="238">
         <parameter key="repository_entry" value="//ECAC/FEUP_ECAC/data/client_final"/>
       </operator>
-      <operator activated="true" class="concurrency:join" compatibility="9.0.003" expanded="true" height="82" name="Join (3)" width="90" x="514" y="187">
+      <operator activated="true" class="concurrency:join" compatibility="9.0.003" expanded="true" height="82" name="Join (3)" width="90" x="514" y="136">
         <parameter key="remove_double_attributes" value="true"/>
         <parameter key="join_type" value="inner"/>
         <parameter key="use_id_attribute_as_key" value="false"/>
-        <list key="key_attributes"/>
+        <list key="key_attributes">
+          <parameter key="client_id" value="client_id"/>
+        </list>
         <parameter key="keep_both_join_attributes" value="false"/>
       </operator>
-      <operator activated="true" class="store" compatibility="9.0.003" expanded="true" height="68" name="Store" width="90" x="581" y="85">
+      <operator activated="true" class="store" compatibility="9.0.003" expanded="true" height="68" name="Store" width="90" x="648" y="85">
         <parameter key="repository_entry" value="//ECAC/FEUP_ECAC/data/JOIN transactions account disposition client"/>
       </operator>
       <connect from_op="Retrieve trans_train" from_port="output" to_op="Join" to_port="left"/>
